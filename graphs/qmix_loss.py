@@ -7,9 +7,6 @@ runs = [
     {"id": "8m_qmix", "label": "8m"},
     {"id": "2s3z_qmix", "label": "2s3z"},
     {"id": "MMM2_qmix", "label": "MMM2"},
-    # {"id": 7, "label": "2c_vs_64zg"},
-    # { "id": 9, "label": "1c3s5z"},
-    # {"id": 10, "label": "10m_vs_11m"},
     {"id": "corridor_qmix", "label": "corridor"},
 ]
 
@@ -24,17 +21,22 @@ for run in runs:
     with open(json_path, "r") as f:
         data = json.load(f)
 
-    x = np.array(data["battle_won_mean_T"]) / 1_000_000  # millions of steps
-    y = np.array(data["battle_won_mean"]) * 100           # convert to %
+    # Check if loss is available
+    if "loss_T" not in data or "loss" not in data:
+        print(f"Warning: {run_id} does not have loss data.")
+        continue
+
+    x = np.array(data["loss_T"]) / 1_000_000  # millions of steps
+    y = np.array(data["loss"])
 
     plt.plot(x, y, label=label)
 
 # Plot formatting
 plt.xlabel("Timesteps (Millions)")
-plt.ylabel("Win Rate (%)")
-plt.title("Battle Win Rate Over Training (QMIX)")
-plt.legend(title="Map")
+plt.ylabel("Loss")
+plt.title("Training Loss Over Time (QMIX)")
+plt.legend(title="Map",loc="upper right", fontsize = 8)
 plt.grid(True)
 plt.tight_layout()
-plt.savefig("QMIX.png", dpi=300)
+plt.savefig("QMIX_Loss.png", dpi=300)
 # plt.show()  # Uncomment if using GUI

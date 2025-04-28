@@ -4,14 +4,15 @@ import numpy as np
 
 # Run metadata
 runs = [
-    {"id": 12, "label": "MMM2"},
-    {"id": 13, "label": "10m_vs_11m"},
-    {"id": 14, "label": "8m"},
-    {"id": 15, "label": "2s3z"},
+    {"id": "8m_relaxed", "label": "8m"},
+    {"id": "2s3z_relaxed", "label": "2s3z"},
+    {"id": "MMM2_relaxed", "label": "MMM2"},
+    #{"id": 22, "label": "corridor"},
+    {"id": "corridor_relaxed", "label": "corridor"},
 ]
 
 base_path = "/projectnb/ds543/miruyoun/pymarl/results/sacred"
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(6, 3))
 
 for run in runs:
     run_id = run["id"]
@@ -29,9 +30,9 @@ for run in runs:
 # Plot formatting
 plt.xlabel("Timesteps (Millions)")
 plt.ylabel("Win Rate (%)")
-plt.title("Battle Win Rate Over Training")
-plt.legend(title="Map")
+plt.title("Battle Win Rate Over Training (RelaxedQMIX)")
+plt.legend(title="Map", loc="lower right", fontsize=6, frameon=True)
 plt.grid(True)
 plt.tight_layout()
-plt.savefig("GNN_QMIX.png", dpi=300)
+plt.savefig("RelaxedQMIX.png", dpi=300)
 # plt.show()  # Uncomment if using GUI
