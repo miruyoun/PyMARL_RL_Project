@@ -1,0 +1,31 @@
+#!/bin/bash -l
+#$ -N pymarl_relaxedqmix_2s3z
+#$ -o /projectnb/ds543/miruyoun/logs/pymarl_relaxedqmix_2s3z_$JOB_ID.out
+#$ -e /projectnb/ds543/miruyoun/logs/pymarl_relaxedqmix_2s3z_$JOB_ID.err
+#$ -l h_rt=12:00:00
+#$ -P ds543
+#$ -l gpu=1
+#$ -l gpu_c=7.0
+#$ -pe omp 4
+#$ -l mem_per_core=8G
+#$ -m ea
+#$ -M miruyoun@bu.edu
+
+module load gcc/9.3.0
+module load python3/3.8.10
+module load cuda/11.3
+
+source /projectnb/ds543/miruyoun/pymarl_env/bin/activate
+export SC2PATH=/projectnb/ds543/miruyoun/StarCraftII
+cd /projectnb/ds543/miruyoun/pymarl
+
+python3 src/main.py \
+    --config=relaxed_qmix \
+    --env-config=sc2 \
+    with env_args.map_name=2s3z \
+    env_args.replay_prefix=2s3z_relaxedqmix \
+    use_cuda=False \
+    save_replay=True \
+    save_model=True \
+    save_model_interval=200000 \
+    t_max=2050000

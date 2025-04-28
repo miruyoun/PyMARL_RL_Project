@@ -1,0 +1,38 @@
+#!/bin/bash -l
+#$ -N pymarl_3m
+#$ -o /projectnb/ds543/miruyoun/logs/pymarl_3m_$JOB_ID.out
+#$ -e /projectnb/ds543/miruyoun/logs/pymarl_3m_$JOB_ID.err
+#$ -l h_rt=08:00:00
+#$ -P ds543
+#$ -l gpu=1
+#$ -l gpu_c=7.0           
+#$ -pe omp 4
+#$ -l mem_per_core=4G
+#$ -m ea
+#$ -M miruyoun@bu.edu
+
+# Load modules
+module load gcc/9.3.0
+module load python3/3.8.10
+module load cuda/11.3
+
+# Activate virtual environment
+source /projectnb/ds543/miruyoun/pymarl_env/bin/activate
+
+# Set SC2 path
+export SC2PATH=/projectnb/ds543/miruyoun/StarCraftII
+
+# Move to PyMARL repo
+cd /projectnb/ds543/miruyoun/pymarl
+
+# Run training
+python3 src/main.py --config=qmix --env-config=sc2 with env_args.map_name=3m save_replay=True use_cuda=True save_model=True t_max=10000
+# python3 src/main.py \
+#     --config=qmix \
+#     --env-config=sc2 \
+#     with env_args.map_name=3m \
+#     env_args.replay_prefix=3m_qmix_test \
+#     save_replay=True \
+#     use_cuda=True \
+#     load_step=2000122 \
+#     checkpoint_path=results/models/qmix__2025-04-17_13-04-03  

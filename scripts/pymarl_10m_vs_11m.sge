@@ -1,0 +1,38 @@
+#!/bin/bash -l
+#$ -N pymarl_MAPPO_MMM2
+#$ -o /projectnb/ds543/miruyoun/logs/pymarl_mappo_$JOB_ID.out
+#$ -e /projectnb/ds543/miruyoun/logs/pymarl_mappo_$JOB_ID.err
+#$ -l h_rt=12:00:00
+#$ -P ds543
+#$ -l gpu=1
+#$ -l gpu_c=7.0
+#$ -pe omp 4
+#$ -l mem_per_core=8G
+#$ -m ea
+#$ -M miruyoun@bu.edu
+
+# Load required modules
+module load gcc/9.3.0
+module load python3/3.8.10
+module load cuda/12.5
+
+# Activate your environment
+source /projectnb/ds543/miruyoun/pymarl_env/bin/activate
+
+# Set StarCraft II path
+export SC2PATH=/projectnb/ds543/miruyoun/StarCraftII
+
+# Navigate to the PyMARL folder
+cd /projectnb/ds543/miruyoun/pymarl
+
+# Run MAPPO training on MMM2 using main.py
+python3 src/main.py \
+    --config=mappo \
+    --env-config=sc2 with env_args.map_name=MMM2 \
+    env_args.replay_dir=/projectnb/ds543/miruyoun/replays \
+    env_args.replay_prefix=MMM2_relaxed_qmix \
+    save_replay=True \
+    save_model=True \
+    save_model_interval=200000 \
+    t_max=2050000 \
+    use_cuda=True
