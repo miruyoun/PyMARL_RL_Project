@@ -36,3 +36,4 @@ python3 src/main.py \
     save_model_interval=200000 \
     t_max=2050000 \
     use_cuda=True
+

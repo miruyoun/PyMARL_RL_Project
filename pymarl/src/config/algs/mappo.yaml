@@ -1,0 +1,46 @@
+# --- MAPPO specific parameters ---
+
+# use multinomial action selector
+action_selector: "multinomial"
+
+runner: "on_policy"
+
+# buffer settings
+batch_size: 4
+buffer_size: 4
+batch_size_run: 1
+
+# learning rates and optimization
+lr: 5e-4
+hidden_dim: 32
+grad_norm_clip: 10
+
+# MAPPO core
+agent: "mappo_agent"
+agent_output_type: "pi_logits"
+learner: "mappo_learner"
+mac: "mappo_mac"
+
+# advantage estimation
+gamma: 0.99
+gae_lambda: 0.95
+
+# PPO specific
+clip_param: 0.2
+entropy_coef: 0.01
+value_loss_coef: 0.5
+
+# saving
+save_model: True
+save_model_interval: 500000
+save_replay: True
+
+# training horizon
+t_max: 2050000
+
+# miscellaneous
+use_cuda: True
+use_tensorboard: False
+
+# experiment name
+name: "mappo"

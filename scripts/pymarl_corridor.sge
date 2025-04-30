@@ -26,24 +26,24 @@ export SC2PATH=/projectnb/ds543/miruyoun/StarCraftII
 cd /projectnb/ds543/miruyoun/pymarl
 
 # Run training with RelaxedQMIX
-python3 src/main.py \
-    --config=relaxed_qmix_corridor \
-    --env-config=sc2 \
-    with env_args.map_name=corridor \
-    env_args.replay_prefix=corridor_relaxedqmix \
-    use_cuda=False \
-    save_replay=True \
-    save_model=True \
-    save_model_interval=200000 \
-    t_max=2050000 
-
 # python3 src/main.py \
-#     --config=qmix \
+#     --config=relaxed_qmix_corridor \
 #     --env-config=sc2 \
 #     with env_args.map_name=corridor \
-#     env_args.replay_prefix=corridor_qmix \
-#     checkpoint_path=results/models/corridor__2025-04-23_22-02-35 \
+#     env_args.replay_prefix=corridor_relaxedqmix \
+#     use_cuda=False \
 #     save_replay=True \
-#     load_step=2000217 \
-#     use_cuda=False
+#     save_model=True \
+#     save_model_interval=200000 \
+#     t_max=2050000 
+
+python3 src/main.py \
+    --config=relaxed_qmix \
+    --env-config=sc2 \
+    with env_args.map_name=corridor \
+    env_args.replay_prefix=corridor_relaxed_qmix \
+    checkpoint_path=results/models/relaxed_qmix__2025-04-27_17-29-30 \
+    save_replay=True \
+    load_step=2000266 \
+    use_cuda=False
 

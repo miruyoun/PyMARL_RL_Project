@@ -1,0 +1,30 @@
+# --- RelaxedQMIX for corridor map ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+
+runner: "episode"
+
+buffer_size: 8000  # Increased buffer size
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "q"
+learner: "q_learner"
+double_q: True
+mixer: "relaxed_qmix"
+mixing_embed_dim: 32
+hypernet_layers: 2  # Increased hypernet layers
+hypernet_embed: 64
+
+# RelaxedQMIX specific parameters for corridor
+correction_epsilon: 0.005
+reg_lambda: 0.2
+correction_init_scale: 0.0001
+
+name: "relaxed_qmix_corridor"

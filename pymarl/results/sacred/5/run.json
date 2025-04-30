@@ -1,0 +1,133 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/projectnb/ds543/miruyoun/pymarl/src",
+    "dependencies": [
+      "numpy==1.24.4",
+      "PyYAML==3.13",
+      "sacred==0.8.7",
+      "torch==1.4.0"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [
+      {
+        "commit": "f42d512765d21a6c6321b7e64bc6473e8894f877",
+        "dirty": true,
+        "url": "git@github.com:miruyoun/relaxed_qmix_pymarl.git"
+      },
+      {
+        "commit": "f42d512765d21a6c6321b7e64bc6473e8894f877",
+        "dirty": true,
+        "url": "git@github.com:miruyoun/relaxed_qmix_pymarl.git"
+      },
+      {
+        "commit": "f42d512765d21a6c6321b7e64bc6473e8894f877",
+        "dirty": true,
+        "url": "git@github.com:miruyoun/relaxed_qmix_pymarl.git"
+      }
+    ],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_08cbd926bc0c701d497bcabb99b00c6f.py"
+      ],
+      [
+        "run.py",
+        "_sources/run_f2a9279ca323701c2e49bc7d3da1f7d8.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_aa14e56e60b01dd7a9ddb8e6cdf36b85.py"
+      ]
+    ]
+  },
+  "heartbeat": "2025-04-28T23:56:54.997159",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) Gold 6426Y",
+    "gpus": {
+      "driver_version": "570.124.06",
+      "gpus": [
+        {
+          "model": "NVIDIA L40S",
+          "persistence_mode": true,
+          "total_memory": 46068
+        },
+        {
+          "model": "NVIDIA L40S",
+          "persistence_mode": true,
+          "total_memory": 46068
+        },
+        {
+          "model": "NVIDIA L40S",
+          "persistence_mode": true,
+          "total_memory": 46068
+        },
+        {
+          "model": "NVIDIA L40S",
+          "persistence_mode": true,
+          "total_memory": 46068
+        }
+      ]
+    },
+    "hostname": "scc-506",
+    "os": [
+      "Linux",
+      "Linux-4.18.0-553.40.1.el8_10.x86_64-x86_64-with-glibc2.2.5"
+    ],
+    "python_version": "3.8.16"
+  },
+  "meta": {
+    "command": "my_main",
+    "config_updates": {
+      "checkpoint_path": "results/models/relaxed_qmix__2025-04-27_20-03-00",
+      "env_args": {
+        "map_name": "2s3z",
+        "replay_prefix": "2s3z_relaxed_qmix"
+      },
+      "load_step": 2000852,
+      "save_replay": true,
+      "use_cuda": false
+    },
+    "named_configs": [],
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--id": null,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "env_args.map_name=2s3z",
+        "env_args.replay_prefix=2s3z_relaxed_qmix",
+        "checkpoint_path=results/models/relaxed_qmix__2025-04-27_20-03-00",
+        "save_replay=True",
+        "load_step=2000852",
+        "use_cuda=False"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2025-04-28T23:56:44.989304",
+  "status": "RUNNING"
+}

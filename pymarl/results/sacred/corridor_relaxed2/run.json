@@ -1,0 +1,125 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/projectnb/ds543/miruyoun/pymarl/src",
+    "dependencies": [
+      "numpy==1.24.4",
+      "PyYAML==3.13",
+      "sacred==0.8.7",
+      "torch==1.4.0"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [
+      {
+        "commit": "c971afdceb34635d31b778021b0ef90d7af51e86",
+        "dirty": true,
+        "url": "https://github.com/oxwhirl/pymarl.git"
+      },
+      {
+        "commit": "c971afdceb34635d31b778021b0ef90d7af51e86",
+        "dirty": true,
+        "url": "https://github.com/oxwhirl/pymarl.git"
+      },
+      {
+        "commit": "c971afdceb34635d31b778021b0ef90d7af51e86",
+        "dirty": true,
+        "url": "https://github.com/oxwhirl/pymarl.git"
+      }
+    ],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_08cbd926bc0c701d497bcabb99b00c6f.py"
+      ],
+      [
+        "run.py",
+        "_sources/run_f2a9279ca323701c2e49bc7d3da1f7d8.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_aa14e56e60b01dd7a9ddb8e6cdf36b85.py"
+      ]
+    ]
+  },
+  "heartbeat": "2025-04-28T10:25:08.554078",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) Gold 6132 CPU @ 2.60GHz",
+    "gpus": {
+      "driver_version": "570.124.06",
+      "gpus": [
+        {
+          "model": "Tesla V100-PCIE-16GB",
+          "persistence_mode": true,
+          "total_memory": 16384
+        },
+        {
+          "model": "Tesla V100-PCIE-16GB",
+          "persistence_mode": true,
+          "total_memory": 16384
+        }
+      ]
+    },
+    "hostname": "scc-x06",
+    "os": [
+      "Linux",
+      "Linux-4.18.0-553.40.1.el8_10.x86_64-x86_64-with-glibc2.2.5"
+    ],
+    "python_version": "3.8.16"
+  },
+  "meta": {
+    "command": "my_main",
+    "config_updates": {
+      "env_args": {
+        "map_name": "corridor",
+        "replay_prefix": "corridor_relaxedqmix"
+      },
+      "save_model": true,
+      "save_model_interval": 200000,
+      "save_replay": true,
+      "t_max": 2050000,
+      "use_cuda": false
+    },
+    "named_configs": [],
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--id": null,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "env_args.map_name=corridor",
+        "env_args.replay_prefix=corridor_relaxedqmix",
+        "use_cuda=False",
+        "save_replay=True",
+        "save_model=True",
+        "save_model_interval=200000",
+        "t_max=2050000"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2025-04-28T03:34:04.185795",
+  "status": "RUNNING"
+}
