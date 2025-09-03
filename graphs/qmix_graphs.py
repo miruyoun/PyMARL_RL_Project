@@ -14,7 +14,7 @@ runs = [
 ]
 
 base_path = "/projectnb/ds543/miruyoun/pymarl/results/sacred"
-plt.figure(figsize=(6, 6))
+plt.figure(figsize=(6, 3))
 
 for run in runs:
     run_id = run["id"]
