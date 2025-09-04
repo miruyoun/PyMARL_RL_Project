@@ -17,29 +17,32 @@ This project includes:
 ## 🏗️ Project Structure
 The repository follows the PyMARL framework with additional modifications for Relaxed QMIX:
 
+```text
 relaxed_qmix_pymarl/
-├── docs/ # Project documentation (e.g., relaxed_qmix.pdf)
-├── graphs/ # Training graphs and visualizations
-├── logs/ # Log files and experiment outputs
+├── docs/                   # Project documentation (e.g., relaxed_qmix.pdf)
+├── graphs/                 # Training graphs and visualizations
+├── logs/                   # Log files and experiment outputs
 │
-├── pymarl/ # Core PyMARL framework
-│ ├── __MACOSX/ # System-generated folder (can be ignored)
-│ ├── 3rdparty/ # Third-party dependencies
-│ ├── docker/ # Docker setup for reproducible runs
-│ ├── results/ # Checkpoints, evaluation results
-│ ├── src/ # Source code (controllers, learners, modules, etc.)
-│ │
-│ ├── install_sc2.sh # Script to install StarCraft II
-│ ├── run_interactive.sh # Script to run experiments interactively
-│ ├── run.sh # Script to launch training jobs
-│ ├── requirements.txt # Python dependencies for PyMARL
-│ └── LICENSE # PyMARL license
+├── pymarl/                 # Core PyMARL framework
+│   ├── 3rdparty/           # Third-party dependencies
+│   ├── docker/             # Docker setup for reproducible runs
+│   ├── results/            # Checkpoints, evaluation results
+│   ├── src/                # Source code (controllers, learners, modules, etc.)
+│   │
+│   ├── install_sc2.sh      # Script to install StarCraft II
+│   ├── run_interactive.sh  # Script to run experiments interactively
+│   ├── run.sh              # Script to launch training jobs
+│   ├── requirements.txt    # Python dependencies for PyMARL
+│   └── LICENSE             # PyMARL license
 │
-├── pymarl_env/ # Python virtual environment (not tracked in Git)
-├── replays/ # Saved StarCraft II replays
-├── scripts/ # Helper scripts for experiments
-├── smac/ # StarCraft Multi-Agent Challenge (SMAC) environment wrapper
-├── StarCraftII/ # StarCraft II binary and maps
+├── pymarl_env/             # Python virtual environment (not tracked in Git)
+├── replays/                # Saved StarCraft II replays
+├── scripts/                # Helper scripts for experiments
+├── smac/                   # StarCraft Multi-Agent Challenge (SMAC) environment wrapper
+├── StarCraftII/            # StarCraft II binary and maps
+│
+├── .gitignore              # Git ignore file
+├── README.md               # Project documentation
 
 ## ⚙️ Installation
 
