@@ -43,6 +43,7 @@ relaxed_qmix_pymarl/
 │
 ├── .gitignore              # Git ignore file
 ├── README.md               # Project documentation
+```
 
 ## ⚙️ Installation
 
