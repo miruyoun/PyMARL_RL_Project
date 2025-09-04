@@ -15,6 +15,31 @@ This project includes:
 - Experiment configurations for StarCraft II micromanagement (SMAC) environments
 
 ## 🏗️ Project Structure
+The repository follows the PyMARL framework with additional modifications for Relaxed QMIX:
+
+relaxed_qmix_pymarl/
+├── docs/ # Project documentation (e.g., relaxed_qmix.pdf)
+├── graphs/ # Training graphs and visualizations
+├── logs/ # Log files and experiment outputs
+│
+├── pymarl/ # Core PyMARL framework
+│ ├── __MACOSX/ # System-generated folder (can be ignored)
+│ ├── 3rdparty/ # Third-party dependencies
+│ ├── docker/ # Docker setup for reproducible runs
+│ ├── results/ # Checkpoints, evaluation results
+│ ├── src/ # Source code (controllers, learners, modules, etc.)
+│ │
+│ ├── install_sc2.sh # Script to install StarCraft II
+│ ├── run_interactive.sh # Script to run experiments interactively
+│ ├── run.sh # Script to launch training jobs
+│ ├── requirements.txt # Python dependencies for PyMARL
+│ └── LICENSE # PyMARL license
+│
+├── pymarl_env/ # Python virtual environment (not tracked in Git)
+├── replays/ # Saved StarCraft II replays
+├── scripts/ # Helper scripts for experiments
+├── smac/ # StarCraft Multi-Agent Challenge (SMAC) environment wrapper
+├── StarCraftII/ # StarCraft II binary and maps
 
 ## ⚙️ Installation
 
@@ -35,14 +60,24 @@ This project includes:
     pip install -r requirements.txt
     ```
 
-4. Set up StarCraft II and SMAC environments following the instructions in [PyMARL](https://github.com/oxwhirl/pymarl#starcraft-ii-setup).
+4. Set up StarCraft II and SMAC environments following the instructions in [PyMARL](https://github.com/oxwhirl/pymarl).
 
-## 🚀 Usage
+## 🧪 Example Experiments
 
-Train a Relaxed QMIX agent on a SMAC map:
+3 Marines (3m easy map):
 ```bash
-python3 src/main.py --config=qmix --env-config=sc2 with env_args.map_name=8m
+python3 src/main.py --config=relaxed_qmix --env-config=sc2 with env_args.map_name=3m
 ```
+
+Marine, Marauder, Medivac (MMM2 harder map):
+```bash
+python3 src/main.py --config=relaxed_qmix --env-config=sc2 with env_args.map_name=3m
+```
+
+## 📄 Paper
+
+For a detailed description of Relaxed QMIX and experiments, see the full  
+[project paper (PDF)](docs/relaxed_qmix.pdf).
 
 ## 🎥 Video Demos
 
